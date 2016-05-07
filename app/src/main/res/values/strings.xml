@@ -1,0 +1,472 @@
+<resources>
+    <string name="app_name">JSP y Servlet</string>
+    <string name="title_jsp">JSP y Servlet</string>
+    <string name="form_btn_mas_tarde">Mas Tarde</string>
+    <string name="form_btn_ingresar">Ingresar</string>
+    <string name="form_btn_crear_cuenta">Registrate</string>
+
+    <string-array name="item_menu_principal">
+        <item>Servlet</item>
+        <item>JSP</item>
+    </string-array>
+    <string-array name="item_menu_secundario_servlet">
+        <item>Video Introducción a Servlet</item>
+        <item>¿Qué es Servlet?</item>
+        <item>Caracteristicas de un Servlet</item>
+        <item>Estructura Básica</item>
+        <item>Ciclo de vida de un Servlet</item>
+        <item>Software para ejecutar un Servlet</item>
+        <item>Tipos de peticiones</item>
+        <item>Datos enviados por el cliente</item>
+        <item>Método del objeto cookie</item>
+        <!--<item>Interfaz HttpSession</item>-->
+
+    </string-array>
+
+    <string-array name="item_menu_secundario_jsp">
+        <item>Video Introducción a JSP</item>
+        <item>¿Qué es JSP?</item>
+        <item>Ciclo de vida de una página JSP</item>
+        <item>Objetos Implícitos</item>
+        <item>Ámbitos de los atributos</item>
+        <item>Lenguaje de expresión en JSP 2.0</item>
+        <item>Comentarios</item>
+        <item>Directrices</item>
+        <item>Integracion Servlets y JSP</item>
+
+
+    </string-array>
+
+    <string-array name="item_menu_secundario_examen_final">
+        <item>Examen Final</item>
+    </string-array>
+
+
+    <string name="login_valido">Alicia</string>
+    <string name="clave_valida">1234</string>
+    <string name="error_autenticar">Datos incorrectos</string>
+    <string name="title_create_login_registro">Registro</string>
+    <string name="datos_guardados_correctamente">"Datos guardados exitosamente "</string>
+    <string name="btn_create_guardar">Guardar</string>
+    <string name="btn_create_cancelar">Cancelar</string>
+    <string name="title_login">Login</string>
+    <string name="form_btn_recuperar">Recuperar contraseña</string>
+    <string name="tab_servlet">Servlet</string>
+    <string name="tab_jsp">JSP</string>
+
+    <string name="contenido_servlet_q_es_servlet">
+        Un servlet es un programa que se ejecuta en el contenedor Web de un servidor de aplicaciones.
+        \n - Los clientes pueden invocarlo utilizando el protocolo HTTP.
+        \n -Comparativamente, lo mismo que un applet es cargado y ejecutado por un explorador, un servlet
+        es cargado y ejecutado por un contenedor Web.
+    </string>
+    <string name="caracteristicas_servlets">
+         En definitiva, si comparamos los servlets con la tecnologia CGI o con otras, llegaremos a la conclusión
+        de que es bastante mas sencilla y más potente. Sus principales caracteristicas son:
+        \n \t - Al estar escritos en Java, son independientes de la plataforma.
+
+        \n \t - Consumen menos recursos porque sólo son cargados la primera vez que se solicitan sus servicios.
+        Las siguientes peticiones crearan hilos de ejecución.
+
+        \n \t- Son más rápidos que los programas CGI y que los scripts porque, por un lado se precompilan y, por otro, no se tiene que generar
+        un nuevo proceso cada vez que se invocan.
+        \n \t- Son seguros y portables debido:
+        \n 1) a que se ejecutan bajo la máquina virtual de Java.
+        \n 2) al mecanismo de excepciones de Java.
+        \n 3) al uso del administrador de seguridad de Java(Java Security Manager).
+
+        \n \t- No requiere soporte para Java en el exploador del cliente, ya que operan en el dominio del servidor y envian los resultados en HTML.
+        No obstante, se pueden utilizar otras interfaces de cliente como aplicaciones Java o applets.
+
+          </string>
+     <string name="estructura_basica">
+    <![CDATA[
+         Desde el punto de vista de Java, un servlet no es más que un objeto de alguna de las clases de la API
+         Java Servlet que implemente la interfaz Servlet, como son GenericServlet y HttpServlet. Cuando se implementa
+         un servicio generico normalmente se utiliza las clases GenericServlet. En cambio, la clase HttpServlet es la idónea
+         para servicios específicos HTTP.
+         \n \n import java.io.*;
+            \n import javax.servlet.*;
+            \n import javax.servlet.http.*;
+
+            \n public class SomeServlet extends HttpServlet {
+            \n public void doGet(HttpServletRequest request,
+            \n HttpServletResponse response)
+            \n throws ServletException, IOException {
+
+            \n // Use "request" to read incoming HTTP headers (e.g. cookies)
+            \n // and HTML form data (e.g. data the user entered and submitted)
+
+            \n // Use "response" to specify the HTTP response line and headers
+            \n // (e.g. specifying the content type, setting cookies).
+
+            \n PrintWriter out = response.getWriter();
+            \n// Use "out" to send content to browser
+            \n }
+            \n }
+    ]]>
+     </string>
+    <string name="ciclo_servlet">
+     Todo Servlet debe implementar la interfaz Servlet ya que es esta quien declara los métodos que definen el ciclo de vida del mismo:
+        init, service y destroy.
+        \n \n - El método init: es invocado por el contenedor Web para iniciar la ejecución del servlet.Este método se ejecuta una sola vez
+        y tiene como misión iniciar las variables y recursos necesarios para la ejecución del Servlet. Si la ejecución de este método no se
+        realiza con éxito, lanzará la excepción ServletException.
+        \n \n - El método service: se llama cada vez que el servidor recibe una petición para el servlet. Este método puede recibir varias
+        llamadas simultáneas. Por cada una de ellas, crea un nuevo hilo y examina el tipo de petición HTTP (GET, POST, PUT, DELETE, TRACE,
+        OPTIONS o HEAD). Este método tiene dos parámetros de tipos HttpServletRequest y HttpServletResponse, que son pasados al método invocado.
+        \n \n - El método destroy: es el último método invocado justo antes de destruir el servlet. Normalmente se utiliza para liberar los
+        recursos adquiridos; por ejemplo, borrar ficheros temporales.
+
+          </string>
+
+
+    <string name="software_necesario">
+              Los pasos necesarios para ver el resultado que produce un servlet serían:
+             \n -Compilarlo, instalarlo en un servidor e invocarlo para su ejecución desde un explorador.
+                Estos pasos requieren proceder de la siguiente manera:
+        \n \n - Partiendo de que tenemos instalado el J2SE SDK, instalar el servidor de aplicaciones Tomcat 5.
+        \n - Si no se tiene instalado ningun software para desarrollar aplicaciones Java, instale el paquete J2EE SDK.
+          </string>
+
+    <string name="tipo_peticion">
+       Petición HTTP GET:
+        \n \n - Cuando el tipo de petición HTTP es GET, los datos del formulario son enviados al servidor a continuación de la dirección
+        URL especificada por el atributo action de form.
+        \n - Con este tipo de petición HTTP GET la información del formulario se envía añadiéndola al URL indicado por el action,
+        el tamaño de la cadena enviada está limitado, al estar en ASCII es totalmente legible, por lo tanto no es modo seguro, ya que puede
+        ser utilizada malintencionalmente como destino de un enlace.
+
+        \n \n Peticion HTTP POST:
+        \n \n -Cuando el tipo de peticion HTTP es POST, los datos son enviados al servidor en el cuerpo de la petición. Es el método usual
+        de enviar los datos de un formulario.
+        \n - La información del formulario se envía después del URL indicado por action en el cuerpo de la petición y el tamaño de la
+        información enviada no está limitado.
+
+        \n \n El método correcto para elegir es según lo siguiente:
+        \n - Si los datos son pocos y no importa confidencialidad o manipulación, utilizaremos GET.
+        \n - Si son largos, privados o importantes utilizaremos POST.
+
+          </string>
+
+    <string name="datos_formulario">
+           -  Un servlet lee los datos enviados en la petición realizada por un cliente mediante el método getParameter del objeto
+        HttpServletRequest que los métodos doGet y doPost reciben como parámetro.
+        \n - El método getParameter devuelve en un objeto de tipo String el valor del parámetro especificado como argumento. Los nombres de
+        los parámetros son sensibles a minúsculas y mayúsculas.
+        \n - Para leer el conjunto de valores asignados a un parámetro, se utiliza el método getParameterValues que devuelve una matriz de tipo
+        String con todos los valores del parámetro especificado como argumento; si este no existe, devuelve null.
+        \n - Para obtener los nombres de todos los parámetros, disponemos del método getParameterNames que retorna una enumeración de objetos
+        String con los nombres de los parámetros.
+        \n - El método hasMoreElements de Enumeration permite iterar mientras haya más elementos en la enumeración.
+
+          </string>
+
+     <string name="objeto_cookie">
+        - Una cookie es una pequeña cantidad de información(no más de 4 K) que un servlet puede crear y almacenar en la máquina cliente y,
+         posteriormente, consultar a trávees de la API de cookies de los servlets.
+         \n \n - Una cookie se compone de dos partes: un nombre y un valor; el nombre la identifica entre todas las demás cookies almacenadas en
+         el cliente y el valor es un dato asociado con la cookie.
+         \n \n - Un servlet para crear una cookie simplemente tiene que invocar al constructor de la clase Cookie pasando como argumentos
+         su nombre y el valor asociado.Ejemplo:
+         \n \n Cookie miCookie = new Cookie("nombre-cookie", "valor-asociado");
+
+         \n \n - Para añadir las cabeceras de la respuesta HTTP, ahi que invocar al método addCookie del objeto HttpServletResponse pasando
+         como argumento la cookie que se desea añadir:
+         \n \n response.addCookie(miCookie);
+
+     </string>
+
+
+     <string name="contenido_jsp">
+      JSP es un acrónimo de Java Server Pages, que traducido vendria a decir algo como Pagínas de Servidor Java.
+         \n \n - Es una tecnología orientada a crear pagínas Web con programación en Java.
+         \n - Las pagínas JSP están compuestas de código HTML/XML mezclado con etiquetas especiales (órdenes)
+         y con trozos de código escritos en Java (scriptlets - secuencias de ordenes).
+         \n - Por lo tanto, las JSP podremos escribirlas con nuestro editor HTML/XML habitual.
+
+         </string>
+    <string name="ciclo_jsp">
+
+        Se divide en varias fases:
+        \n \n Fase de traducción
+         \n \t -Tras la primera petición de la página JSP, se traduce en un servlet (código java).
+         \n \n Fase de compilación
+         \n \t -Dicho servlet es compilado para poder servir la petición del cliente.
+         \n \t -Normalmente las fases de traducción y compilación ocurren juntas,
+        \n y son realizadas por el contenedor automáticamente en la primera petición.
+         \n \n Fase de ejecución
+         \n \t -Se crea una instancia de dicho servlet, que residirá en memoria de forma permanente mientras el servidor siga en funcionamiento.
+         \n \t -Para las peticiones posteriores se emplea la misma instancia del servlet (no se vuelve a compilar la página).
+         </string>
+    <string name="objetos_implicitos">
+
+         Objetos utilizados en la tecnología JSP:
+        \n \n -pageContext: Es un objeto de la clase PageContext que proporciona acceso a objetos relacionados con los servlets.
+        Para obtener este objeto hay que invocar al método getPageContext de la clase JspFactory.
+        \n \n -request: Es un objeto de la clase HttpServletRequest, que se puede obtener a tráves del método getRequest, que encapsula los
+        datos enviados por el cliente al servidor.
+        \n \n -response: Es un objeto de la clase HttpServletResponse, que se puede obtener a través del método getResponse, encapsula
+        los datos que el servidor enviará al cliente.
+        \n \n -application: Es un objeto de la clase ServletContext, se obtiene a través del método getServletContext.
+        \n \n -config: Es un objeto de la clase ServletConfig, se obtiene a través del método getServletConfig.
+        \n \n -session: Es un objeto de la clase HttpSession, se obtiene a través del método getSessión.
+        \n \n -out: Es un objeto de la clase JspWriter, se obtiene a través del método getOut.
+        \n \n -page: Es un objeto, genéricamente de la clase Object, se obtiene a través del método getPage.
+        \n \n -exception: Es un objeto de la clase Exception, se obtiene a través del método getException.
+
+         </string>
+    <string name="ambitos_atributos">
+
+       El ámbito de un atributo determina la duración y visibilidad de los atributos de los objetos HttpSession, ServletContext o PageContext
+        de la capa Web.
+        \n \n En los siguientes cuatro ámbitos los métodos para fijar y leer atributos son: setAttribute y getAttribute.
+        \n \n Ámbito de sesión
+        \n Los atributos que utilizan la interfaz ServletContext a través del objeto implícito application tienen ámbito de aplicación,
+        son visibles por todos los componentes de la capa Web durante todo el período de vida de la aplicación.
+        \n \n Ámbito de sesión
+        \n Los atributos que utilizan la interfaz HttpSession a través del objeto implícito session tienen ámbito de sesión, son visibles
+        sólo por el cliente HTTP que inició la sesión.
+        \n \n Ámbito de petición
+        \n Los atributos  que utilizan la interfaz HttpServletRequest a través del objeto implícito request tienen ámbito de petición, son
+        visibles sólo por el componente de la aplicación que está sirviendo la petición HTTP, y solo hasta que ésta sea servida.
+        \n \n Ámbito de página
+        \n Los atributos que utilizan la interfaz PageContext a través del objeto implícito page tienen ámbito de página, son visibles solo en el
+        contexto de una única página JSP, y hasta que la página sea procesada.
+
+         </string>
+    <string name="lenguaje_jsp">
+        El lenguaje de expresión JSP no es un lenguaje de programación; es simplemente un lenguaje de acceso a datos.
+        \n \n Objetos implícitos:
+        \n El lenguaje de expresión de JSP 2.0 soporta los objetos implicítos siguientes:
+        \n \t -pageContext: Objeto de javax.servlet.jsp.PageContext
+        \n \t -param: Colección(objeto de tipo java.util.Map)
+        \n \t -paramValues: Colección(objeto de la clase java.util.Map)
+        \n \t -header: Colección (objeto de tipo java.util.Map)
+        \n \t -headerValues: Colección(objeto de la clase java.util.Map)
+        \n \t -cookie: Colección (objeto de tipo java.util.Map)
+        \n \t -initParam: Colección (objeto de tipo java.util.Map)
+    </string>
+
+    <string name="comentarios">
+          <![CDATA[
+         Los comentarios son útiles para identificar el documento y también para comentar el código o cualquier circunstancia del documento.
+        En una página JSP podemos insertar comentarios tipo HTML o tipo JSP.
+        \n Los comentarios tipo HTML son incluidos entre los simbolos <!-- y -->. Y cuando se insertan en la respuesta enviada por el servidor
+          al cliente, no se visualiza en el documento HTML, pero si en el codigo fuente. Ejemplo de este comentario:
+          \n \n <!-- Esto es un comentario tipo HTML -->
+
+         \n \n Los comenatrios JSP son incluidos entre los simbolos <%-- y --%>, y estos no son enviados al explorador, por lo que no se muestran
+         ni se ven cuando se visualiza el codigo HTML desde el explorador. Por ejemplo:
+         \n \n <%-- Esto es un comentario tipo JSP --%>
+          ]]>
+
+          </string>
+
+     <string name="directrices">
+          <![CDATA[
+         Las directrices page, include y taglib son mensajes para el motor JSP.
+
+         \n \n Directriz page:
+         \n Define atributos que se aplican a toda la página JSP.
+         \n Tipicamente se localizan al principio de la página JSP y puede haber cualquier número de ellas.
+         \n \n Directriz include:
+         \n La directriz include incluye un fichero (.html, .jsp, .xml o de texto)en una página JSP.
+         \n \n Directriz taglib:
+         \n La directriz taglib indica la biblioteca de acciones personalizadas que podremos utilizar en la codificación de la página JSP.
+         \n Esta directriz taglib debe colocarse antes de utilizar en la página JSP las acciones personalizadas definidas por la misma.
+          ]]>
+          </string>
+
+
+
+    <string name="integracion_servlets_jsp">
+    En las aplicaciones web desarrolladas con Servlets y JSP suele haber una separación clara del código dedicado a la lógica de negocio, al manejo de los datos y a generar la parte del interfaz.
+    \n \n -En aplicaciones complejas, JSP sólo no suele ser suficiente.
+    \n -Se suele utilizar JSP para desarrollar y mantener la presentación (contenido HTML).
+    \n \n El código real se ubica en clases separadas (lógica de negocio):
+    \n \t -JavaBeans.
+    \n \t -Etiquetas personalizadas.
+    \n \t -Incluso, servlets.
+    \n \n La administración de los datos es gestionada por SGBD (JDBC)
+
+
+    \n \n JSP puede ser incluso insuficiente para presentaciones donde los resultados son totalmente diferentes dependiendo de los datos que se reciben.
+    \n La combinación “JSP + JavaBeans + Etiquetas personalizadas”, aunque muy potente, no puede superar la limitación que impone la secuenciación relativamente fija de los elementos JSP.
+    \n -Solución: usar servlets y JSP.
+    \n \n El servlet puede manejar la petición inicial, procesar parcialmente los datos, iniciar los javabeans y pasar a continuación los resultados a un conjunto de páginas JSP.
+    \n De una sola petición pueden derivar múltiples resultados substancialmente diferentes.
+    \n Esta aproximación se conoce como arquitectura MVC (Model View Controller).
+    \n MVC modifica el diseño de la aplicación.
+
+    \n \n Pasando Peticiones
+    \n \n  Para que los servlets puedan pasar las peticiones:
+    \n \t -Se crea un objeto de la clase RequestDispatcher.
+    \n \t -Se utiliza su método forward para transferir el control a la URL asociada.
+    \n \n public void doGet(...) throws ... { String operacion = request.getParameter("operation");
+    \n String direccion; if (operacion.equals("order")) direccion = "pedido.jsp"; else if
+    \n (operation.equals("cancel")) direccion = "cancelacion.jsp"; ...
+    \n RequestDispatcher dispatcher = request.getRequestDispatcher(direccion);
+    \n dispatcher.forward(request, response); }
+
+    \n \n Compilando e Invocando el Servlet
+    \n \n EL principal servidor (gratuito) de servlets y JSP es “Tomcat” de Apache
+    \n (http://jakarta.apache.org/tomcat)
+    \n Pasos a seguir para el servidor Tomcat:
+    \n Verificar que el servidor está corriendo
+    \n Compilar el servlet:
+    \n > javac –classpath dir_instalacion/lib/servlet.jar  nom_servlet
+    \nSituar el servlet compilado en una dirección adecuada:
+    \n> cp nom_servlet.class dir_tomcat/webapps/ROOT/WEBINF/classes
+    \nInvocar el servlet desde el browser:
+    \n > http://servidor:puerto/servlet/nom_servlet (El puerto se configura en dir_install/conf/server.xml)
+          </string>
+
+    <string name="title_Bienvenido">Bienvenido al Tutorial de JSP y Servlets</string>
+    <string name="title_enviar">Enviar datos</string>
+    <string name="title_telefono">Telefono</string>
+    <string name="title_ultima">Ultima contraseña recordada</string>
+    <string name="title_mascota">¿Cuál es tu mascota favorita?</string>
+    <string name="title_correo">Correo</string>
+    <string name="title_usuariore">Usuario</string>
+    <string name="title_contraseñare">Contraseña</string>
+    <string name="title_loginini">Usuario</string>
+    <string name="title_password">Contraseña</string>
+    <string name="txv_ayuda_sugerencias">
+              Desarrolladora: Norma Alicia Moreno Rico
+        \n \n Universidad Tecnológica del Norte de Guanajuato
+        \n \n Asignatura: Desarrollo de Aplicaciones III
+        \n \n Cuatrimestre: 5to
+        \n \n Nombre de Aplicación: JSP y Servlet
+        \n \n Bibliografía: Fco. Javier Ceballos. (2005). Capitulo 9 Servlets, Capitulo 10 JSP . En JAVA 2 Interfaces graficas y aplicaciones para Internet(337-410, 413-484). Mexico D.F. : ALFAOMEGA RA-MA.</string>
+    <string name="txv_ayuda_y_sugerencias">- Es recomendable utilizar la aplicacion conectado a internet de preferencia por medio de wi-fi, ya que si utiliza los datos podria causarle un gasto mayor. \n \n -Si no se conecta a internet, algunas imagenes o videos no podran mostrarse o reproducirse.</string>
+    <string name="title_progres">Progreso</string>
+    <string name="btn_aceptar">Aceptar</string>
+    <string name="btn_Aceptar">Aceptar</string>
+    <string name="txv_mensaje">La información ah sido enviada a su móvil con exito</string>
+    <string name="txv_bienvenido">"Bienvenido "</string>
+    <string name="txv_progreso">Display a spinner or a horizontal progress dialog on touch.</string>
+    <string name="Comenzar">Comenzar</string>
+    <string name="title_mail">Correo</string>
+    <string name="next">Siguiente</string>
+    <string name="Pregunta">Pregunta</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="grafica">Grafica</string>
+    <string name="sonido">Sonido</string>
+    <string name="salir">Salir</string>
+    <string name="configuracion">Configuración</string>
+    <string name="ayuda_y_sugerencias">Ayuda y sugerencias</string>
+    <string name="video_introduccion">Video de Introducción</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="progreso">Progreso</string>
+    <string name="menu_bar_grafica_on">Grafica resultados</string>
+    <string name="tema1">Cambiar tema 1</string>
+    <string name="tema2">Cambiar tema 2</string>
+    <string name="tema3">Cambiar tema 3</string>
+    <string name="cambiar_temas">Cambiar tema</string>
+    <string name="rosa">Rosa</string>
+    <string name="morado">Morado</string>
+    <string name="blanco">Blanco</string>
+    <string name="fondo_predeterminado">Fondo predeterminado</string>
+    <string-array name="numero_preguntas">
+        <item>pregunta 1</item>
+        <item>pregunta 2</item>
+        <item>pregunta 3</item>
+        <item>pregunta 4</item>
+        <item>pregunta 5</item>
+        <item>pregunta 6</item>
+        <item>pregunta 7</item>
+        <item>pregunta 8</item>
+    </string-array>
+
+    <string-array name="respuesta">
+        <item>HTTP</item>
+        <item>JSP</item>
+        <item>Java</item>
+        <item>JSP2.0</item>
+        <item>Cookie</item>
+        <item>Tomcat</item>
+        <item>Servlet</item>
+        <item>Directriz</item>
+    </string-array>
+
+    <string-array name="pregunta">
+        <item>Protocolo que se utiliza para invocar un servlet:</item>
+        <item>Siglas de Java Server Pages:</item>
+        <item>En qué están escritos los servlets</item>
+        <item>Lenguaje de expresión mencionado:</item>
+        <item>Pequeña cantidad de información que un servlet puede crear y almacenar en la máquina</item>
+        <item>Servidor donde se ejecuta servlet y JSP</item>
+        <item>Programa que se ejecuta en el contenedor Web:</item>
+        <item>Como se les llama a los mensajes para el motor JSP,page, include y taglib:</item>
+    </string-array>
+
+    <string-array name="opciones_r2">
+        <item>Calculadora</item>
+        <item>Galeria</item>
+        <item>Temas de fondo</item>
+        <item>Cronómetro</item>
+        <item>Video promocional UTNG</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+</resources>

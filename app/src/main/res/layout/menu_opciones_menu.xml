@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/jspservlets"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_color_rosa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fondo_predeterminado"/>
+
+        <Button
+            android:id="@+id/btn_color_morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blanco"/>
+
+        <Button
+            android:id="@+id/btn_color_gris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/morado"/>
+
+        <Button
+            android:id="@+id/btn_color_blanco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rosa"/>
+    </LinearLayout>
+</LinearLayout>

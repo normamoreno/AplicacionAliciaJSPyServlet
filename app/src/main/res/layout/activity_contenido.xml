@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false"
+    >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10pt"
+    android:paddingRight="10pt"
+    android:paddingTop="5pt"
+    android:paddingBottom="10pt">
+    <TextView
+        android:id="@+id/txv_titulo_contenido"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15pt"
+        android:textColor="@color/colorBlack"/>
+
+    <TextView
+        android:id="@+id/txv_informacion_contenido"
+        android:layout_margin="5pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="6pt"
+        android:layout_below="@id/txv_titulo_contenido"
+        android:textColor="@color/colorBlack"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_pregunta"
+        android:layout_centerInParent="true"
+        android:text="@string/Pregunta"
+        android:layout_below="@id/txv_informacion_contenido"/>
+
+</RelativeLayout>
+    </ScrollView>

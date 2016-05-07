@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5pt"
+    android:paddingRight="5pt"
+    android:paddingTop="5pt"
+    android:paddingBottom="10pt"
+    android:layout_margin="5pt">
+
+    <TextView
+        android:id="@+id/txv_titulo_grafica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_bar_grafica_on"
+        android:textSize="15pt"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:layout_below="@id/txv_titulo_grafica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12pt"
+                android:text="JSP"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12pt"
+                android:text="Servlet"
+                />
+        </TableRow>
+        <TableRow>
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/xyp_grafica_jsp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                />
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/xyp_grafica_servlet"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                />
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>
+    </HorizontalScrollView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPurpleOne">#9c27b0</color>
+    <color name="colorPurpleTwo">#6a1b9a</color>
+    <color name="colorPurpleThree">#e1bee7</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorPink">#880e4f</color>
+    <color name="colorPinke">#F5A9F2</color>
+    <color name="colorPurpleFor">#E3CEF6</color>
+
+    <color name="colorPrimary">#A119E0</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorGrey">#868686</color>
+    <color name="seekbar_bg">#141414</color>
+    <color name="seekbar_progress">#a53130</color>
+    <color name="seekbar_sec_progress">#875e5e</color>
+
+</resources>

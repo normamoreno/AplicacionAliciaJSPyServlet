@@ -1,0 +1,189 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".MainActivity"
+    android:background="#ff393939">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="right|bottom"
+        android:weightSum="1"
+        android:background="#ffeeeeee">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtNumero"
+            android:background="#ffb9b9b9"
+            android:textSize="35dp"
+            android:layout_weight="0.10" />
+
+        <Button
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:text="BORRAR"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onClickLimpia" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:id="@+id/button4"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn7" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:id="@+id/button5"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn8" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:id="@+id/button2"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn9" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="÷"
+                android:id="@+id/button10"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickDivision" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:id="@+id/button3"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn4" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:id="@+id/button8"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn5" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:id="@+id/button9"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn6" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="×"
+                android:id="@+id/button11"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickMultiplicacion" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/button12"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn1" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:id="@+id/button13"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn2" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:id="@+id/button14"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn3" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="−"
+                android:id="@+id/button15"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickResta" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/button16"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtn0" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:id="@+id/button17"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickBtnPunto" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:id="@+id/button18"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickIgual" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:id="@+id/button19"
+                android:textSize="@dimen/abc_action_bar_progress_bar_size"
+                android:onClick="onClickSuma" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

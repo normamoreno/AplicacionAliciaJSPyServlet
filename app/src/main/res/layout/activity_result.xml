@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
+    <TextView
+        android:id="@+id/txv_titulo_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="RESULTADO"
+        android:textSize="12pt"
+        android:textColor="@color/colorPink"/>
+    <LinearLayout
+        android:id="@+id/lnl_strellas"
+        android:layout_below="@id/txv_titulo_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center">
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="4"
+            android:stepSize="1.0"
+            android:clickable="false"
+            android:isIndicator="true"
+            android:rating="0.0"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txv_numero_preguntas_correctas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="8pt"
+        android:layout_below="@id/lnl_strellas"
+        android:textColor="@color/colorPrimary"/>
+
+
+</RelativeLayout>
